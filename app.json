@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/home/home",
     "pages/index/index",
     "pages/userinfo/userinfo",
     "pages/myinfo/myinfo"
@@ -7,19 +8,24 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Jaye の ",
+    "navigationBarTitleText": "勤工助学管理系统",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "position":"buttom",
-    "selectedColor":"#0A0A0A",
-    "borderStyle":"balck",
+    "position": "buttom",
+    "selectedColor": "#0A0A0A",
+    "borderStyle": "balck",
     "list": [
       {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "img/main_selected.jpg",
+        "selectedIconPath": "img/main.jpg"
+      },{
         "pagePath": "pages/index/index",
-        "text":"首页",
-        "iconPath":"img/main_selected.jpg",
-        "selectedIconPath":"img/main.jpg"
+        "text": "值班表",
+        "iconPath": "img/index_selected.png",
+        "selectedIconPath": "img/index.png"
       },
       {
         "pagePath": "pages/userinfo/userinfo",
