@@ -8,7 +8,7 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "勤工助学管理系统",
+    "navigationBarTitleText": "勤工助学签到系统",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {

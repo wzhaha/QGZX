@@ -15,12 +15,24 @@ Page({
    * 页面的初始数据
    */
   data: {
+    location: {},
+    accurate: 0.01
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.getLocation({
+      type: 'wgs84',
+      success: function (res) {
+        var latitude = res.latitude
+        var longitude = res.longitude
+        var speed = res.speed
+        var accuracy = res.accuracy
+        location = res
+      }
+    })
   },
 
   /**
@@ -76,8 +88,30 @@ Page({
    * 签到
    */
   sign: function (event) {
+    console.log(location)
+    if (39.95933 - this.data.ccurate < location.latitude < 39.95933 + this.data.ccurate && 116.29845 - this.data.ccurate < location.longitude < 116.29845 + this.data.ccurate) {
+      wx.showToast({
+        title: '签到成功',
+        icon: 'succes',
+        duration: 1000,
+        mask: true
+      })
+    }
+    else
+      wx.showToast({
+        title: '位置错误',
+        icon: 'success',
+        duration: 1000,
+        mask: true
+      })
+  },
+
+  /**
+ * 请假
+ */
+  leave: function (event) {
     wx.showToast({
-      title: '签到成功',
+      title: '已发送请假请求',
       icon: 'succes',
       duration: 1000,
       mask: true
@@ -87,9 +121,9 @@ Page({
   /**
  * 请假
  */
-  leave: function (event) {
+  onCardClick: function (event) {
     wx.showToast({
-      title: '已发送请假请求',
+      title: '点击卡片',
       icon: 'succes',
       duration: 1000,
       mask: true
