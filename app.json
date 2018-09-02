@@ -1,0 +1,33 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/userinfo/userinfo",
+    "pages/myinfo/myinfo"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Jaye の ",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "position":"buttom",
+    "selectedColor":"#0A0A0A",
+    "borderStyle":"balck",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text":"首页",
+        "iconPath":"img/main_selected.jpg",
+        "selectedIconPath":"img/main.jpg"
+      },
+      {
+        "pagePath": "pages/userinfo/userinfo",
+        "text": "个人中心",
+        "iconPath": "img/tab_info_selected.jpg",
+        "selectedIconPath": "img/tab_info.jpg"
+      }
+    ]
+  },
+  "debug": true
+}

@@ -1,0 +1,63 @@
+<!--index.wxml-->
+
+<view class='container_index'>
+  <text class='top_show'>勤工助学</text>
+</view>
+<view class='white_line'></view>
+<view class='gray_line'></view>
+
+<view class="top-menu">
+  <block bindtap='menu_bar' wx:for="{{menu_tab}}" wx:key="menu_tab">
+    <view wx:if="{{index==clickId}}" class='column_item_selected' wx:for-index="index" wx:for-item="item" bindtap='menu_bar' id="{{index}}">
+      {{item}}
+    </view>
+    <view wx:else id="{{index}}" wx:for-item="item" class='column_item' bindtap='menu_bar'>
+      {{item}}
+    </view>
+  </block>
+</view>
+
+<view class='gray_line'></view>
+
+
+<view wx:if="{{clickId==0}}">
+  <view id="panel" class="flex-column">
+    <view class="flex-row">
+      <text class="flex_first flex-row">#</text>
+      <text class="flex_second flex-row">时间段</text>
+      <text class="flex_third flex-row">状态</text>
+      <text class="flex_fourth flex-row">签到</text>
+    </view>
+  </view>
+  <view id="panel" class="flex-column">
+    <block wx:for="{{task_info_1}}" wx:key="task_info_1" wx:for-item="item" wx:for-index="index">
+      <view class="flex-row">
+        <text class="flex_first flex-row">{{index+1}}</text>
+        <text class="flex_second flex-row">{{item.time}}</text>
+        <text wx:if="{{item.status==1}}" class="flex_third flex-row">已签</text>
+        <text wx:else class="flex_third flex-row">未签</text>
+        <button wx:if="{{item.status==0}}" bindtap="sign" class="flex_fourth btn" hover-class='btn_hover'>签到</button>
+        <button wx:else bindtap="sign" disabled='true' class="flex_fourth btn" hover-class='btn_hover'>签到</button>
+      </view>
+    </block>
+  </view>
+</view>
+
+<view wx:else>
+  <view id="panel" class="flex-column">
+    <view class="flex-row">
+      <text class="flex_first_2 flex-row">#</text>
+      <text class="flex_second_2 flex-row">姓名</text>
+      <text class="flex_third_2 flex-row">状态</text>
+    </view>
+  </view>
+  <view id="panel" class="flex-column">
+    <block wx:for="{{task_info_2}}" wx:key="task_info_2" wx:for-item="item" wx:for-index="index">
+      <view class="flex-row">
+        <text class="flex_first_2 flex-row">{{index+1}}</text>
+        <text class="flex_second_2 flex-row">{{item.name}}</text>
+        <text class="flex_third_2 flex-row">{{item.status}}</text>
+      </view>
+    </block>
+  </view>
+</view>

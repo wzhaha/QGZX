@@ -1,0 +1,58 @@
+/* pages/myinfo/myinfo.wxss */
+
+.userinfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 125rpx;
+  height: 125rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+
+.person-list {
+  display: flex;
+  flex-direction: column;
+  margin-left:80rpx 
+}
+
+.gray_border{
+  width: 100%;
+  height: 10rpx;
+  background: lavender;
+}
+
+.white_border{
+  width: 100%;
+  height: 25rpx;
+  background: white;
+}
+
+.line_seperate{
+  width: 100%;
+  height: 2px;
+  color: whitesmoke;
+}
+
+.list_item{
+  display: flex;
+  flex-direction: row;
+  height: 100rpx;
+  margin-left: 20px;
+}
+
+.label_item{
+  font-size: 20px;
+  margin-left: 10px;
+}
+.info_item{
+   font-size: 20px;
+}

@@ -1,0 +1,31 @@
+<!--pages/myinfo/myinfo.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <image class="userinfo-avatar" src="{{myinfo.avatarUrl}}" background-size="cover"></image>
+  </view>
+</view>
+
+<view class='gray_border'></view>
+<view class='white_border'></view>
+
+<!--个人信息的列表-->
+<view class='person-list'>
+  <view class='list_item'>
+    <label class='label_item'>昵称：</label>
+    <text class="info_item">{{myinfo.nickName}}</text>
+  </view>
+
+  <view class='line_seperate'></view>
+
+  <view class='list_item'>
+    <label class='label_item'>性别：</label>
+    <text class="info_item">{{gender}}</text>
+  </view>
+
+  <view class='line_seperate'></view>
+
+  <view class='list_item'>
+    <label class='label_item'>学号：</label>
+    <text class="info_item">16301133</text>
+  </view>
+</view>
