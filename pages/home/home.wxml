@@ -1,0 +1,37 @@
+<!--pages/home/home.wxml-->
+<!--index.wxml-->
+
+<view class='container_index'>
+  <text class='top_show'>今日值班</text>
+</view>
+<view class='white_line'></view>
+<view class='gray_line'></view>
+
+<!-- <view class="top-menu">
+  <block bindtap='menu_bar' wx:for="{{menu_tab}}" wx:key="menu_tab">
+    <view wx:if="{{index==clickId}}" class='column_item_selected' wx:for-index="index" wx:for-item="item" bindtap='menu_bar' id="{{index}}">
+      {{item}}
+    </view>
+    <view wx:else id="{{index}}" wx:for-item="item" class='column_item' bindtap='menu_bar'>
+      {{item}}
+    </view>
+  </block>
+</view> -->
+
+<!-- <view class='gray_line'></view> -->
+
+<view>
+  <view id="panel">
+    <text class="flex-row">值班1</text>
+    <text class="flex-row">时间:14:10——16:00</text>
+    <text class="flex-row">地点:YF704</text>
+    <text class="flex-row">状态:未签到</text>
+  </view>
+  <div>
+  <button style="float:left" bindtap="leave" class="flex_fourth btn" hover-class='btn_hover'>请假</button>
+  </div>
+  <div>
+  <button style="float:right" bindtap="sign" class="flex_fourth btn" hover-class='btn_hover'>签到</button>
+  <!-- <button wx:else disabled='true' class="flex_fourth btn">签到</button> -->
+  </div>
+</view>

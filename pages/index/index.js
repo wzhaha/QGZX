@@ -15,19 +15,22 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
 
-    menu_tab: ["今日值班", "当前值班"],
+    menu_tab: ["本周值班", "当前值班"],
     clickId: 0,
     task_info_1: [
       {
-        time: "10.45",
+        time: "8:00——9:50",
+        position: "YF704",
         status: 1,
       },
       {
-        time: "20.45",
+        time: "8:00——9:50",
+        position: "YF814",
         status: 1,
       },
       {
-        time: "3.45",
+        time: "8:00——9:50",
+        position: "YF812",
         status: 0,
       },
     ],
@@ -41,8 +44,8 @@ Page({
         status: "已签",
       },
       {
-        name: "写好",
-        status: "已签",
+        name: "汤泓敏",
+        status: "未签",
       },
     ],
   },
@@ -106,6 +109,7 @@ Page({
   onShareAppMessage: function () {
 
   },
+  
   /**
    * 签到
    */

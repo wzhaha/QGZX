@@ -19,14 +19,13 @@
 
 <view class='gray_line'></view>
 
-
 <view wx:if="{{clickId==0}}">
   <view id="panel" class="flex-column">
     <view class="flex-row">
       <text class="flex_first flex-row">#</text>
-      <text class="flex_second flex-row">时间段</text>
-      <text class="flex_third flex-row">状态</text>
-      <text class="flex_fourth flex-row">签到</text>
+      <text class="flex_second flex-row">时间</text>
+      <text class="flex_third flex-row">地点</text>
+      <text class="flex_fourth flex-row">状态</text>
     </view>
   </view>
   <view id="panel" class="flex-column">
@@ -34,10 +33,9 @@
       <view class="flex-row">
         <text class="flex_first flex-row">{{index+1}}</text>
         <text class="flex_second flex-row">{{item.time}}</text>
-        <text wx:if="{{item.status==1}}" class="flex_third flex-row">已签</text>
-        <text wx:else class="flex_third flex-row">未签</text>
-        <button wx:if="{{item.status==0}}" bindtap="sign" class="flex_fourth btn" hover-class='btn_hover'>签到</button>
-        <button wx:else bindtap="sign" disabled='true' class="flex_fourth btn" hover-class='btn_hover'>签到</button>
+        <text class="flex_third flex-row">{{item.position}}</text>
+        <text wx:if="{{item.status==1}}" class="flex_fourth flex-row">已签</text>
+        <text wx:else class="flex_fourth flex-row">未签</text>
       </view>
     </block>
   </view>

@@ -45,7 +45,13 @@
   <view class='person-line'></view>
   <view class="list-item">
     <image class="item-image" src="/img/feedback.jpg"></image>
-    <text class="item-text" bindtap='feedback'>我的反馈</text>
+    <text class="item-text" bindtap='about'>关于</text>
+  </view>
+
+  <view class='person-line'></view>
+  <view class="list-item">
+    <image class="item-image" src="/img/feedback.jpg"></image>
+    <text class="item-text" bindtap='feedback'>反馈</text>
   </view>
 
 </view>
