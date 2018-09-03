@@ -4,7 +4,11 @@
     "pages/index/index",
     "pages/userinfo/userinfo",
     "pages/myinfo/myinfo",
-    "pages/sign/sign"
+    "pages/sign/sign",
+    "pages/about/about",
+    "pages/contact/contact",
+    "pages/feedback/feedback",
+    "pages/myduty/myduty"
   ],
   "window": {
     "backgroundTextStyle": "light",

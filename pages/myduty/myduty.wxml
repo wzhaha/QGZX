@@ -1,0 +1,27 @@
+<!--pages/myduty/myduty.wxml-->
+
+<view class='container_index'>
+  <text class='top_show'>联系方式</text>
+</view>
+<view class='white_line'></view>
+<view class='gray_line'></view>
+
+<view id="panel" class="flex-column">
+  <view class="flex-row">
+    <text class="flex_first flex-row">时间</text>
+    <text class="flex_second flex-row">地点</text>
+    <text class="flex_third flex-row">状态</text>
+    <text class="flex_fourth flex-row">其他</text>
+  </view>
+</view>
+<view id="panel" class="flex-column">
+  <block wx:for="{{duty_info}}" wx:key="duty_info" wx:for-item="item" wx:for-index="index">
+    <view class="flex-row">
+      <text class="flex_first flex-row">{{item.date}}</text>
+      <text class="flex_second flex-row">{{item.position}}</text>
+      <text class="flex_third flex-row">{{item.status}}</text>
+      <text wx:if="{{item.late==1}}" class="flex_fourth flex-row">迟到</text>
+      <text wx:else class="flex_fourth flex-row">无</text>
+    </view>
+  </block>
+</view>

@@ -1,0 +1,10 @@
+<!--pages/about/about.wxml-->
+
+<view class='container_index'>
+  <text class='top_show'>关于我们</text>
+</view>
+<view class='white_line'></view>
+<view class='gray_line'></view>
+<view>版本：1.0</view>
+<view>开发者：王志、辛鹏起、汤泓敏</view>
+<view></view>

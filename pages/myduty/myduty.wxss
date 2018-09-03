@@ -1,0 +1,68 @@
+/* pages/myduty/myduty.wxss */
+
+.gray_line {
+  width: 100%;
+  height: 10rpx;
+  background: lavender;
+}
+
+.white_line {
+  width: 100%;
+  height: 20rpx;
+  background: white;
+}
+
+.top_show {
+  font-size: 20px;
+}
+
+.container_index {
+  width: 100%;
+  height: 150rpx;
+  text-align: center;
+  line-height: 150rpx;
+}
+
+.line {
+  width: 5rpx;
+  height: 100%;
+  background-color: lavender;
+}
+
+#panel text {
+  line-height: 8vh;
+  border-right: 1rpx solid #ddd;
+  border-bottom: 1rpx solid #ddd;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 10rpx；;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  height: 10px；;
+}
+
+.flex_first {
+  width: 30%;
+}
+
+.flex_second {
+  width: 25%;
+}
+
+.flex_third {
+  width: 25%;
+}
+
+.flex_fourth {
+  width: 20%;
+}

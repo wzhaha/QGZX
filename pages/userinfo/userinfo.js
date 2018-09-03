@@ -77,6 +77,26 @@ Page({
       url: '../myinfo/myinfo'
     })
   },
+  myduty: function () {
+    wx.navigateTo({
+      url: '../myduty/myduty'
+    })
+  },
+  contact: function () {
+    wx.navigateTo({
+      url: '../contact/contact'
+    })
+  },
+  about: function () {
+    wx.navigateTo({
+      url: '../about/about'
+    })
+  },
+  feedback: function () {
+    wx.navigateTo({
+      url: '../feedback/feedback'
+    })
+  },
   set_:function(){
 
   },

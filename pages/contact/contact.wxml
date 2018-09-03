@@ -1,0 +1,26 @@
+<!--pages/contact/contact.wxml-->
+
+<view class='container_index'>
+  <text class='top_show'>联系方式</text>
+</view>
+<view class='white_line'></view>
+<view class='gray_line'></view>
+
+<view id="panel" class="flex-column">
+  <view class="flex-row">
+    <text class="flex_first flex-row">#</text>
+    <text class="flex_second flex-row">姓名</text>
+    <text class="flex_third flex-row">学号</text>
+    <text class="flex_fourth flex-row">联系方式</text>
+  </view>
+</view>
+<view id="panel" class="flex-column">
+  <block wx:for="{{contact_info}}" wx:key="contact_info" wx:for-item="item" wx:for-index="index">
+    <view class="flex-row">
+      <text class="flex_first flex-row">{{index+1}}</text>
+      <text class="flex_second flex-row">{{item.name}}</text>
+      <text class="flex_third flex-row">{{item.stu_id}}</text>
+      <text class="flex_fourth flex-row">{{item.phone_num}}</text>
+    </view>
+  </block>
+</view>
