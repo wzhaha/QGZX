@@ -21,8 +21,6 @@
 <!--分割线-->
 <view class='gray_border'></view>
 
-<view class='white_border'></view>
-
 <view class="person-list">
 
   <view class="list-item">

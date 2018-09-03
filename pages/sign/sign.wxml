@@ -1,0 +1,15 @@
+<!-- pages/sign/sign.wxml -->
+<view>
+  <view id="panel">
+    <text class="flex-row">值班1</text>
+    <text class="flex-row">时间:14:10——16:00</text>
+    <text class="flex-row">地点:YF704</text>
+    <text class="flex-row">状态:未签到</text>
+    <view class='white_line'></view>
+  </view> 
+  <button bindtap="leave" class="flex_fourth btn" hover-class='btn_hover'>请假</button>
+  <view class='white_line'></view>
+  <button bindtap="checkout" class="flex_fourth btn" hover-class='btn_hover'>签出</button>
+  <view class='white_line'></view>
+  <button bindtap="checkin" class="flex_fourth btn" hover-class='btn_hover'>签入</button>
+</view>

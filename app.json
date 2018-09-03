@@ -3,7 +3,8 @@
     "pages/home/home",
     "pages/index/index",
     "pages/userinfo/userinfo",
-    "pages/myinfo/myinfo"
+    "pages/myinfo/myinfo",
+    "pages/sign/sign"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -19,9 +20,10 @@
       {
         "pagePath": "pages/home/home",
         "text": "首页",
-        "iconPath": "img/main_selected.jpg",
+        "iconPath": "img/main_selected.png",
         "selectedIconPath": "img/main.jpg"
-      },{
+      },
+      {
         "pagePath": "pages/index/index",
         "text": "值班表",
         "iconPath": "img/index_selected.png",
@@ -30,7 +32,7 @@
       {
         "pagePath": "pages/userinfo/userinfo",
         "text": "个人中心",
-        "iconPath": "img/tab_info_selected.jpg",
+        "iconPath": "img/tab_info_selected.png",
         "selectedIconPath": "img/tab_info.jpg"
       }
     ]
