@@ -19,17 +19,20 @@ Page({
     clickId: 0,
     task_info_1: [
       {
-        time: "8:00——9:50",
+        week: 1,
+        period: 3,
         position: "YF704",
         status: 2,
       },
       {
-        time: "8:00——9:50",
+        week: 3,
+        period: 2,
         position: "YF814",
         status: 1,
       },
       {
-        time: "8:00——9:50",
+        week: 4,
+        period: 1,
         position: "YF812",
         status: 0,
       },

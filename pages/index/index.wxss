@@ -111,7 +111,7 @@
 }
 
 .flex_second {
-  width: 40%;
+  width: 20%;
 }
 
 .flex_third {
@@ -119,6 +119,10 @@
 }
 
 .flex_fourth {
+  width: 20%;
+}
+
+.flex_fifth {
   width: 30%;
 }
 
