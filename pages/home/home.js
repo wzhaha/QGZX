@@ -15,14 +15,34 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    now_list:[
+      {
+        time:"14:10-16:00",
+        pos:"YF704",
+        status:1
+      }
+    ]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    /**
+     * 没有地理位置的时候
+     */
+    if (!app.globalData.location){
+      wx.getLocation({
+        type: 'wgs84',
+        success: function (res) {
+          var latitude = res.latitude
+          var longitude = res.longitude
+          var speed = res.speed
+          var accuracy = res.accuracy
+          app.globalData.location = res
+        }
+      })
+    }
   },
 
   /**

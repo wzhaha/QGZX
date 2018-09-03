@@ -8,6 +8,7 @@
 
 <view id="panel" class="flex-column">
   <view class="flex-row">
+    <text class="flex_zero flex-row">#</text>
     <text class="flex_first flex-row">日期</text>
     <text class="flex_second flex-row">时间段</text>
     <text class="flex_third flex-row">地点</text>
@@ -17,10 +18,12 @@
 <view id="panel" class="flex-column">
   <block wx:for="{{duty_info}}" wx:key="duty_info" wx:for-item="item" wx:for-index="index">
     <view class="flex-row">
+      <text class="flex_zero flex-row">{{index+1}}</text>
       <text class="flex_first flex-row">{{item.date}}</text>
       <text class="flex_second flex-row">{{item.period}}</text>
       <text class="flex_third flex-row">{{item.position}}</text>
-      <text class="flex_fourth flex-row">{{item.status}}</text>
+      <text wx:if="{{item.status==1}}"class="flex_fourth flex-row">完成</text>
+      <text wx:if="{{item.status==2}}"class="flex_fourth flex-row">请假</text>
     </view>
   </block>
 </view>

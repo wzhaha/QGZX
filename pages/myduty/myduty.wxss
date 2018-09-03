@@ -51,18 +51,21 @@
   height: 10px；;
 }
 
+.flex_zero{
+  width:10%
+}
 .flex_first {
   width: 30%;
 }
 
 .flex_second {
-  width: 20%;
+  width: 18%;
 }
 
 .flex_third {
-  width: 25%;
+  width: 22%;
 }
 
 .flex_fourth {
-  width: 25%;
+  width: 20%;
 }

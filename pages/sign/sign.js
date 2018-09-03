@@ -11,12 +11,12 @@ var isEmptyObject = function (e) {
 }
 
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
     location: {},
+    hasLocation:false,
     accurate: 0.01
   },
 
@@ -24,16 +24,23 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.getLocation({
-      type: 'wgs84',
-      success: function (res) {
-        var latitude = res.latitude
-        var longitude = res.longitude
-        var speed = res.speed
-        var accuracy = res.accuracy
-        location = res
-      }
-    })
+    if (app.globalData.location) {
+      this.setData({
+        location: app.globalData.location,
+        hasLocation: true
+      })
+    }else{
+      wx.getLocation({
+        type: 'wgs84',
+        success: function (res) {
+          var latitude = res.latitude
+          var longitude = res.longitude
+          var speed = res.speed
+          var accuracy = res.accuracy
+          app.globalData.location = res
+        }
+      })
+    }
   },
 
   /**
@@ -89,8 +96,7 @@ Page({
  * 签入
  */
   checkin: function (event) {
-    console.log(location)
-    if (39.95933 - this.data.ccurate < location.latitude < 39.95933 + this.data.ccurate && 116.29845 - this.data.ccurate < location.longitude < 116.29845 + this.data.ccurate) {
+    if (39.95933 - this.data.accurate < this.data.location.latitude < 39.95933 + this.data.accurate && 116.29845 - this.data.accurate < this.data.location.longitude < 116.29845 + this.data.accurate) {
       wx.showToast({
         title: '签入成功',
         icon: 'succes',
@@ -112,7 +118,7 @@ Page({
 */
   checkout: function (event) {
     console.log(location)
-    if (39.95933 - this.data.ccurate < location.latitude < 39.95933 + this.data.ccurate && 116.29845 - this.data.ccurate < location.longitude < 116.29845 + this.data.ccurate) {
+    if (39.95933 - this.data.accurate < this.data.location.latitude < 39.95933 + this.data.accurate && 116.29845 - this.data.ccurate < this.data.location.longitude < 116.29845 + this.data.accurate) {
       wx.showToast({
         title: '签出成功',
         icon: 'succes',
