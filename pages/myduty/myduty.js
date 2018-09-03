@@ -8,21 +8,21 @@ Page({
     duty_info: [
       {
         date: "20180901",
+        period: 2,
         position: "YF704",
         status: "已完成",
-        late:0,
       },
       {
         date: "20180902",
+        period: 2,
         position: "YF704",
         status: "已请假",
-        late: 0,
       },
       {
         date: "20180903",
+        period: 3,
         position: "YF704",
         status: "已完成",
-        late: 1,
       },
     ],
   },

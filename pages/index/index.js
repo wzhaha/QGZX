@@ -21,7 +21,7 @@ Page({
       {
         time: "8:00——9:50",
         position: "YF704",
-        status: 1,
+        status: 2,
       },
       {
         time: "8:00——9:50",

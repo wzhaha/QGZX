@@ -1,7 +1,7 @@
 <!--pages/about/about.wxml-->
 
 <view class='container_index'>
-  <text class='top_show'>关于我们</text>
+  <text class='top_show'>关于</text>
 </view>
 <view class='white_line'></view>
 <view class='gray_line'></view>
