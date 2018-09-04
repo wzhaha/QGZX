@@ -16,7 +16,7 @@ Page({
    */
   data: {
     location: {},
-    hasLocation:false,
+    hasLocation: false,
     accurate: 0.01
   },
 
@@ -24,23 +24,20 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    if (app.globalData.location) {
-      this.setData({
-        location: app.globalData.location,
-        hasLocation: true
-      })
-    }else{
-      wx.getLocation({
-        type: 'wgs84',
-        success: function (res) {
-          var latitude = res.latitude
-          var longitude = res.longitude
-          var speed = res.speed
-          var accuracy = res.accuracy
-          app.globalData.location = res
-        }
-      })
-    }
+    wx.getLocation({
+      type: 'wgs84',
+      success: function (res) {
+        var latitude = res.latitude
+        var longitude = res.longitude
+        var speed = res.speed
+        var accuracy = res.accuracy
+        app.globalData.location = res
+      }
+    })
+    this.setData({
+      location: app.globalData.location,
+      hasLocation: true
+    })
   },
 
   /**

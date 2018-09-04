@@ -19,8 +19,8 @@
     <view class="flex-row">
       <text class="flex_first flex-row">{{index+1}}</text>
       <text class="flex_second flex-row">{{item.name}}</text>
-      <text class="flex_third flex-row">{{item.stu_id}}</text>
-      <text class="flex_fourth flex-row">{{item.phone_num}}</text>
+      <text class="flex_third flex-row">{{item.id}}</text>
+      <text class="flex_fourth flex-row">{{item.mobile}}</text>
     </view>
   </block>
 </view>

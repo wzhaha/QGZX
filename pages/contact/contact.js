@@ -5,30 +5,43 @@ Page({
    * 页面的初始数据
    */
   data: {
-    contact_info: [
-      {
-        name: "王志",
-        stu_id: "16301133",
-        phone_num: 13121313699,
-      },
-      {
-        name: "辛鹏起",
-        stu_id: "16301138",
-        phone_num: 13121313699,
-      },
-      {
-        name: "汤泓敏",
-        stu_id: "16301132",
-        phone_num: 13121313699,
-      },
-    ],
+    contact_info:null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that=this
+    /**
+         * 从服务器获取个人信息
+         */
+    wx.request({
+      url: 'https://wz.oranme.com/getContact',
+      method: 'GET',
+      header: {
+        'content-type': 'application/json'
+      }, // 设置请求的 header
+      success: function (res) {
+        if (res.statusCode == 200) {
+          console.log(res)
+          if (res.data != "none") {
+            that.setData({
+              contact_info: res.data
+            })
+          }
+        } else {
+          console.log("home.js wx.request CheckCallUser statusCode" + res.statusCode);
+        }
+      },
+      fail: function () {
+        console.log("index.js wx.request CheckCallUser fail");
+      },
+      complete: function () {
+        // complete
 
+      }
+    })
   },
 
   /**

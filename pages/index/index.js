@@ -17,26 +17,7 @@ Page({
 
     menu_tab: ["本周值班", "当前值班"],
     clickId: 0,
-    task_info_1: [
-      {
-        week: 1,
-        period: 3,
-        position: "YF704",
-        status: 2,
-      },
-      {
-        week: 3,
-        period: 2,
-        position: "YF814",
-        status: 1,
-      },
-      {
-        week: 4,
-        period: 1,
-        position: "YF812",
-        status: 0,
-      },
-    ],
+    task_info_1: null,
     task_info_2: [
       {
         name: "王志",
@@ -53,6 +34,7 @@ Page({
     ],
   },
   onLoad: function () {
+    var that=this
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -79,6 +61,38 @@ Page({
         },
       })
     }
+    /**
+     * 获取一周的值班表
+     */
+    wx.request({
+      url: 'https://wz.oranme.com/getSecheduleById',
+      method: 'POST',
+      data: {
+        id: "16301133"
+      },
+      header: {
+        'content-type': 'application/json'
+      }, // 设置请求的 header
+      success: function (res) {
+        if (res.statusCode == 200) {
+          console.log(res)
+          if (res.data != "none") {
+            that.setData({
+              task_info_1: res.data
+            })
+          }
+        } else {
+          console.log("home.js wx.request CheckCallUser statusCode" + res.statusCode);
+        }
+      },
+      fail: function () {
+        console.log("index.js wx.request CheckCallUser fail");
+      },
+      complete: function () {
+        // complete
+
+      }
+    })
   },
 
   getUserInfo: function (e) {

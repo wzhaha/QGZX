@@ -22,3 +22,7 @@
   text-align: center;
   line-height: 150rpx;
 }
+
+.verison{
+  text-align: center
+}

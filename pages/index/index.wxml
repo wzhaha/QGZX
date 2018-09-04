@@ -34,11 +34,9 @@
       <view class="flex-row">
         <text class="flex_first flex-row">{{index+1}}</text>
         <text class="flex_second flex-row">{{item.week}}</text>
-         <text class="flex_third flex-row">{{item.period}}</text>
+         <text class="flex_third flex-row">{{item.section}}</text>
         <text class="flex_fourth flex-row">{{item.position}}</text>
-        <text wx:if="{{item.status==2}}" class="flex_fifth flex-row">已结束</text>
-        <text wx:elif="{{item.status==0}}" class="flex_fifth flex-row">未开始</text>
-        <text wx:else class="flex_fifth flex-row">正在进行</text>
+        <text class="flex_fifth flex-row">已结束</text>
       </view>
     </block>
   </view>

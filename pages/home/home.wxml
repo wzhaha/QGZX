@@ -6,10 +6,12 @@
 <view class='white_line'></view>
 <view class='gray_line'></view>
 
-<view class="card">
-  <view bindtap="onCardClick">
-    <image class="image" mode="aspectFill" src="/img/card1.jpg"/>
-    <text class="index_task">值班1</text>
-    <text class="task_info">YF704 14:10——16:00</text>
+<block wx:for="{{day_schedule}}" wx:key="day_schedule" wx:for-item="item" wx:for-index="index">
+  <view class="card">
+    <view bindtap="onCardClick">
+      <image class="image" mode="aspectFill" src="/img/card1.jpg" />
+      <text class="index_task">{{item.name}}</text>
+      <text class="task_info">YF704 14:10——16:00</text>
+    </view>
   </view>
-</view>
+</block>
