@@ -85,7 +85,8 @@ Page({
           console.log("home.js wx.request CheckCallUser statusCode" + res.statusCode);
         }
       },
-      fail: function () {
+      fail: function (res) {
+        console.log(res)
         console.log("index.js wx.request CheckCallUser fail");
       },
       complete: function () {
