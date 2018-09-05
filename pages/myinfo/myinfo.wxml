@@ -12,14 +12,24 @@
 <view class='person-list'>
   <view class='list_item'>
     <label class='label_item'>昵称：</label>
-    <text class="info_item">{{myinfo.nickName}}</text>
+    <view class='info_item'>
+    <open-data type="userNickName"></open-data>
+    </view>
+  </view>
+
+  <view class='line_seperate'></view>
+
+  <view class='list_item'>
+    <label class='label_item'>姓名：</label>
+    <text class="info_item">{{userinfo.name}}</text>
   </view>
 
   <view class='line_seperate'></view>
 
   <view class='list_item'>
     <label class='label_item'>性别：</label>
-    <text class="info_item">{{gender}}</text>
+    <text wx:if="{{gender!=null}}"class="info_item">{{gender}}</text>
+    <text wx:else class="info_item">未知</text>
   </view>
 
   <view class='line_seperate'></view>
@@ -28,4 +38,13 @@
     <label class='label_item'>学号：</label>
     <text class="info_item">16301133</text>
   </view>
+
+  <view class='line_seperate'></view>
+
+  <view class='list_item'>
+    <label class='label_item'>电话：</label>
+    <text class="info_item">{{userinfo.mobile}}</text>
+  </view>
+
+  
 </view>

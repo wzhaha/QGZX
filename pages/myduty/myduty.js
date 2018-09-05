@@ -1,37 +1,53 @@
 // pages/myduty/myduty.js
+
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    duty_info: [
-      {
-        date: "20180901",
-        period: 2,
-        position: "YF704",
-        status: 1,
-      },
-      {
-        date: "20180902",
-        period: 2,
-        position: "YF704",
-        status: 2,
-      },
-      {
-        date: "20180903",
-        period: 3,
-        position: "YF704",
-        status: 1,
-      },
-    ],
+    duty_history:null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that=this
+    if (!app.globalData.has_duty_history) {
+      wx.request({
+        url: 'https://wz.oranme.com/getTaskHistry',
+        method: 'POST',
+        data: {
+          id: "16301133"
+        },
+        header: {
+          'content-type': 'application/json'
+        }, // 设置请求的 header
+        success: function (res) {
+          if (res.statusCode == 200) {
+            console.log(res)
+            app.globalData.has_duty_history = true
+            app.globalData.duty_history = res.data
+            if (res.data != "none") {
+              that.setData({
+                duty_history: res.data
+              })
+            }
+          } else {
+            console.log("home.js wx.request CheckCallUser statusCode" + res.statusCode);
+          }
+        },
+        complete: function () {
+          // complete
+        }
+      })
+    } else {
+      this.setData({
+        duty_history: app.globalData.duty_history
+      })
+    }
   },
 
   /**

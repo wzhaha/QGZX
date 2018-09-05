@@ -16,11 +16,11 @@
   </view>
 </view>
 <view id="panel" class="flex-column">
-  <block wx:for="{{duty_info}}" wx:key="duty_info" wx:for-item="item" wx:for-index="index">
+  <block wx:for="{{duty_history}}" wx:key="duty_info" wx:for-item="item" wx:for-index="index">
     <view class="flex-row">
       <text class="flex_zero flex-row">{{index+1}}</text>
-      <text class="flex_first flex-row">{{item.date}}</text>
-      <text class="flex_second flex-row">{{item.period}}</text>
+      <text class="flex_first flex-row">{{item.time}}</text>
+      <text class="flex_second flex-row">{{item.section}}</text>
       <text class="flex_third flex-row">{{item.position}}</text>
       <text wx:if="{{item.status==1}}"class="flex_fourth flex-row">完成</text>
       <text wx:if="{{item.status==2}}"class="flex_fourth flex-row">请假</text>

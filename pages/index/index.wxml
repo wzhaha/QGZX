@@ -26,7 +26,6 @@
       <text class="flex_second flex-row">星期</text>
       <text class="flex_third flex-row">时间段</text>
       <text class="flex_fourth flex-row">地点</text>
-      <text class="flex_fifth flex-row">状态</text>
     </view>
   </view>
   <view id="panel" class="flex-column">
@@ -34,9 +33,11 @@
       <view class="flex-row">
         <text class="flex_first flex-row">{{index+1}}</text>
         <text class="flex_second flex-row">{{item.week}}</text>
-         <text class="flex_third flex-row">{{item.section}}</text>
+        <text wx:if="{{item.section==1}}" class="flex_third flex-row">8:20——9:50</text>
+        <text wx:if="{{item.section==2}}" class="flex_third flex-row">10:10——11:40</text>
+        <text wx:if="{{item.section==3}}" class="flex_third flex-row">14:10——16:00</text>
+        <text wx:if="{{item.section==4}}" class="flex_third flex-row">16:10——17:40</text>
         <text class="flex_fourth flex-row">{{item.position}}</text>
-        <text class="flex_fifth flex-row">已结束</text>
       </view>
     </block>
   </view>

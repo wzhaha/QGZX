@@ -52,6 +52,16 @@ App({
   },
   globalData: {
     userInfo: null,
-    location:null
+    location:null,
+    hasUserInfo_datail: false,
+    userInfo_datail:null,
+    duty_history:null,
+    has_duty_history:false,
+    contact_info:null,
+    has_contact_info:false,
+    task_info_1:null,
+    has_task_info_1:false,
+    day_schedule:null,
+    has_day_schedule:false
   }
 })

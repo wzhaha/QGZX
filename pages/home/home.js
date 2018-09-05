@@ -46,35 +46,35 @@ Page({
     /**
      * 从服务器获取个人信息
      */
-    wx.request({
-      url: 'https://wz.oranme.com/getSecheduleById',
-      method: 'POST',
-      data: {
-        id: "16301133"
-      },
-      header: {
-        'content-type': 'application/json'
-      }, // 设置请求的 header
-      success: function(res) {
-        if (res.statusCode == 200) {
-          console.log(res)
-          if (res.data != "none") {
-            that.setData({
-              day_schedule:res.data
-            })
+    if (!app.globalData.has_day_schedule) {
+      wx.request({
+        url: 'https://wz.oranme.com/getDaySchedule',
+        method: 'POST',
+        data: {
+          id: "16301133"
+        },
+        header: {
+          'content-type': 'application/json'
+        }, // 设置请求的 header
+        success: function(res) {
+          if (res.statusCode == 200) {
+            console.log(res)
+            app.globalData.day_schedule = res.data
+            app.globalData.has_day_schedule = true
+            if (res.data != "none") {
+              that.setData({
+                day_schedule: res.data
+              })
+            }
+          } else {
+            console.log("home.js wx.request CheckCallUser statusCode" + res.statusCode);
           }
-        } else {
-          console.log("home.js wx.request CheckCallUser statusCode" + res.statusCode);
-        }
-      },
-      fail: function() {
-        console.log("index.js wx.request CheckCallUser fail");
-      },
-      complete: function() {
-        // complete
-
-      }
-    })
+        },
+      })
+    } else
+      this.setData({
+        day_schedule: app.globalData.day_schedule
+      })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -87,7 +87,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-    
+
   },
 
   /**
