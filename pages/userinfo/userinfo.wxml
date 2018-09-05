@@ -24,31 +24,31 @@
 <view class="person-list">
 
   <view class="list-item">
-    <image class="item-image" src="/img/user.jpg"></image>
+    <image class="item-image" src="/img/user_info.png"></image>
     <button class="button" bindtap='myinfo' open-type="getUserInfo" bindgetuserinfo="getUserInfo">个人信息</button>
   </view>
 
   <view class='person-line'></view>
   <view class="list-item">
-    <image class="item-image" src="/img/look.jpg"></image>
+    <image class="item-image" src="/img/my_duty.png"></image>
     <button class="button" bindtap='myduty'>我的值班</button>
   </view>
 
   <view class='person-line'></view>
   <view class="list-item">
-    <image class="item-image" src="/img/look.jpg"></image>
+    <image class="item-image" src="/img/contact.png"></image>
     <button class="button" bindtap='contact'>联系方式</button>
   </view>
 
   <view class='person-line'></view>
   <view class="list-item">
-    <image class="item-image" src="/img/feedback.jpg"></image>
+    <image class="item-image" src="/img/feedback.png"></image>
     <button class="button" bindtap='feedback'>问题反馈</button>
   </view>
 
   <view class='person-line'></view>
   <view class="list-item">
-    <image class="item-image" src="/img/feedback.jpg"></image>
+    <image class="item-image" src="/img/about.png"></image>
     <button class="button" bindtap='about'>关于</button>
   </view>
 

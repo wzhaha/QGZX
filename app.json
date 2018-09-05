@@ -24,20 +24,20 @@
       {
         "pagePath": "pages/home/home",
         "text": "首页",
-        "iconPath": "img/main_selected.png",
-        "selectedIconPath": "img/main.jpg"
+        "iconPath": "img/home.png",
+        "selectedIconPath": "img/home_selected.png"
       },
       {
         "pagePath": "pages/index/index",
         "text": "值班表",
-        "iconPath": "img/index_selected.png",
-        "selectedIconPath": "img/index.png"
+        "iconPath": "img/index.png",
+        "selectedIconPath": "img/index_selected.png"
       },
       {
         "pagePath": "pages/userinfo/userinfo",
         "text": "个人中心",
-        "iconPath": "img/tab_info_selected.png",
-        "selectedIconPath": "img/tab_info.jpg"
+        "iconPath": "img/user.png",
+        "selectedIconPath": "img/user_selected.png"
       }
     ]
   },
