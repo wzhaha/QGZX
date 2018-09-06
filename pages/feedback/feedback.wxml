@@ -1,2 +1,15 @@
 <!--pages/feedback/feedback.wxml-->
-<text>pages/feedback/feedback.wxml</text>
+
+<view class='container_index'>
+  <text class='top_show'>问题反馈</text>
+</view>
+<view class='gray_line'></view>
+<view class='white_line'></view>
+
+<view class="section">
+  <form bindsubmit="bindFormSubmit">
+    <textarea placeholder="欢迎反馈使用中遇到的问题" name="textarea" auto-focus/>
+    <button calss="btn" form-type="submit"> 提交 </button>
+  </form>
+</view>
+
