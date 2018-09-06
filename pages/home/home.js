@@ -60,7 +60,7 @@ Page({
     /**
      * 从服务器获取个人信息
      */
-    if (!app.globalData.has_day_schedule) {
+    if (!app.globalData.has_day_schedule || app.globalData.hasStudentId) {
       wx.request({
         url: 'https://wz.oranme.com/getDaySchedule',
         method: 'POST',
@@ -105,7 +105,56 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    var that = this
+    /**
+     * 没有地理位置的时候
+     */
+    if (!app.globalData.location) {
+      wx.getLocation({
+        type: 'wgs84',
+        success: function (res) {
+          var latitude = res.latitude
+          var longitude = res.longitude
+          var speed = res.speed
+          var accuracy = res.accuracy
+          app.globalData.location = res
+        }
+      })
+    }
+    /**
+     * 从服务器获取个人信息
+     */
+    console.log(app.globalData.has_day_schedule)
+    console.log(app.globalData.hasStudentId)
+    if (!app.globalData.has_day_schedule || app.globalData.hasStudentId) {
+      wx.request({
+        url: 'https://wz.oranme.com/getDaySchedule',
+        method: 'POST',
+        data: {
+          id: app.globalData.studentId
+        },
+        header: {
+          'content-type': 'application/json'
+        }, // 设置请求的 header
+        success: function (res) {
+          if (res.statusCode == 200) {
+            console.log(res)
+            app.globalData.day_schedule = res.data
+            app.globalData.has_day_schedule = true
+            if (res.data != "none") {
+              that.setData({
+                day_schedule: res.data
+              })
+            }
+          } else {
+            console.log("home.js wx.request CheckCallUser statusCode" + res.statusCode);
+          }
+        },
+      })
+    } else
+      this.setData({
+        day_schedule: app.globalData.day_schedule
+      })
   },
 
   /**
@@ -119,7 +168,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function() {
-
+  
   },
 
   /**

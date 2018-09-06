@@ -1,7 +1,6 @@
 //app.js
 App({
   onLaunch: function () {
-
     // 展示本地存储能力
     // try {
     //   wx.setStorageSync('id', '16301133')

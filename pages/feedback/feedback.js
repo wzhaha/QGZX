@@ -6,7 +6,8 @@ Page({
    */
   data: {
     height: 20,
-    focus: false
+    focus: false,
+    suggestion:null
   },
 
   /**
@@ -66,15 +67,27 @@ Page({
   },
   // 提交
   bindFormSubmit: function(e) {
-    console.log(e.detail.value.textarea)
-    wx.showToast({
-      title: '感谢您的反馈',
-      icon: 'succes',
-      duration: 1000,
-      mask: true
+    console.log(e)
+    var that=this
+    that.setData({
+      suggestion:null
     })
-    wx.navigateTo({
-      url: '../userinfo/userinfo'
-    })
-  }
+    if (e.detail.value.textarea){
+      console.log(e.detail.value.textarea)
+      wx.showToast({
+        title: '感谢您的反馈',
+        icon: 'succes',
+        duration: 1000,
+        mask: true
+      })
+    }
+    else{
+      wx.showToast({
+        title: '请输入内容',
+        icon: 'loading',
+        duration: 1000,
+        mask: true
+      })
+    }
+  },
 })
