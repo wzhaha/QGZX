@@ -1,11 +1,12 @@
 //app.js
 App({
   onLaunch: function () {
-    // 展示本地存储能力
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
 
+    // 展示本地存储能力
+    // try {
+    //   wx.setStorageSync('id', '16301133')
+    // } catch (e) {
+    // }
     // 登录
     wx.login({
       success: res => {
@@ -62,6 +63,8 @@ App({
     task_info_1:null,
     has_task_info_1:false,
     day_schedule:null,
-    has_day_schedule:false
+    has_day_schedule:false,
+    studentId:null,
+    hasStudentId:false
   }
 })

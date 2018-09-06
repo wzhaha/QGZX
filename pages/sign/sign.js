@@ -109,7 +109,7 @@ Page({
       url: 'https://wz.oranme.com/sign',
       method: 'POST',
       data: {
-        id: "16301133",
+        id: app.globalData.studentId,
         status: 1,
         section: this.data.task_detail.section,
         position: this.data.task_detail.position
@@ -160,7 +160,7 @@ Page({
       url: 'https://wz.oranme.com/sign',
       method: 'POST',
       data: {
-        id: "16301133",
+        id: app.globalData.studentId,
         status: 2,
         section: this.data.task_detail.section,
         position: this.data.task_detail.position
@@ -210,7 +210,7 @@ Page({
       url: 'https://wz.oranme.com/sign',
       method: 'POST',
       data: {
-        id: "16301133",
+        id: app.globalData.studentId,
         status: 3,
         section: this.data.task_detail.section,
         position: this.data.task_detail.position

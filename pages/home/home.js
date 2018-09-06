@@ -16,13 +16,31 @@ Page({
    */
   data: {
     day_schedule: null,
-    clickCardId:0
+    clickCardId: 0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    /**
+     * 丛缓存中获取学号
+     */
+    try {
+      var studentid = wx.getStorageSync('id')
+      if (studentid) {
+        app.globalData.hasStudentId = true
+        app.globalData.studentId = studentid
+        // Do something with return value
+      }
+      else {
+        app.globalData.hasStudentId = false
+      }
+    } catch (e) {
+      // Do something when catch error
+    }
+
+    console.log(app.globalData.hasStudentId)
     var that = this
     /**
      * 没有地理位置的时候
@@ -47,7 +65,7 @@ Page({
         url: 'https://wz.oranme.com/getDaySchedule',
         method: 'POST',
         data: {
-          id: "16301133"
+          id: app.globalData.studentId
         },
         header: {
           'content-type': 'application/json'
@@ -76,7 +94,11 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function() {
-
+    if (!app.globalData.hasStudentId){
+      wx.navigateTo({
+        url: '../addUserInfo/addUserInfo'
+      })
+    }
   },
 
   /**

@@ -8,7 +8,8 @@
     "pages/about/about",
     "pages/contact/contact",
     "pages/feedback/feedback",
-    "pages/myduty/myduty"
+    "pages/myduty/myduty",
+    "pages/addUserInfo/addUserInfo"
   ],
   "window": {
     "backgroundTextStyle": "light",

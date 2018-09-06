@@ -20,7 +20,7 @@ Page({
         url: 'https://wz.oranme.com/getTaskHistry',
         method: 'POST',
         data: {
-          id: "16301133"
+          id: app.globalData.studentId
         },
         header: {
           'content-type': 'application/json'
