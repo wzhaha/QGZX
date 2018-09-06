@@ -1,15 +1,32 @@
 <!-- pages/sign/sign.wxml -->
 <view>
+  <view class='white_line'></view>
   <view id="panel">
-    <text class="flex-row">值班1</text>
-    <text class="flex-row">时间:14:10——16:00</text>
-    <text class="flex-row">地点:YF704</text>
-    <text class="flex-row">状态:未签到</text>
+    <text wx:if="{{task_detail.section==1}}" class="flex-row">时间:8:20——9:50</text>
+    <text wx:elif="{{task_detail.section==2}}" class="flex-row">时间:10:10——11:40</text>
+    <text wx:elif="{{task_detail.section==3}}" class="flex-row">时间:14:10——16:00</text>
+    <text wx:elif="{{task_detail.section==4}}" class="flex-row">时间:16:10——17:40</text>
+    <text class="flex-row">地点:{{task_detail.position}}</text>
+
+    <text wx:if="{{task_detail.status==null}}" class="flex-row">状态:未签到</text>
+    <text wx:elif="{{task_detail.status==1}}" class="flex-row">状态:已签入</text>
+    <text wx:elif="{{task_detail.status==2}}" class="flex-row">状态:已签出</text>
+    <text wx:elif="{{task_detail.status==3}}" class="flex-row">状态:请假</text>
     <view class='white_line'></view>
-  </view> 
-  <button bindtap="leave" class="flex_fourth btn" hover-class='btn_hover'>请假</button>
+  </view>
+ 
+  <button wx:if="{{task_detail.status==null}}" bindtap="checkin" class="flex_fourth btn" hover-class='btn_hover'>签入</button>
+  <button wx:else disabled='true'bindtap="checkin" class="flex_fourth btn" hover-class='btn_hover'>签入</button>
+
   <view class='white_line'></view>
-  <button bindtap="checkout" class="flex_fourth btn" hover-class='btn_hover'>签出</button>
+
+  <button wx:if="{{task_detail.status==1}}"  bindtap="checkout" class="flex_fourth btn" hover-class='btn_hover'>签出</button>
+  <button wx:else disabled='true' bindtap="checkout" class="flex_fourth btn" hover-class='btn_hover'>签出</button>
+
   <view class='white_line'></view>
-  <button bindtap="checkin" class="flex_fourth btn" hover-class='btn_hover'>签入</button>
+  <button wx:if="{{task_detail.status==null}}" bindtap="leave" class="flex_fourth btn" hover-class='btn_hover'>请假</button>
+  <button wx:else disabled='true' bindtap="leave" class="flex_fourth btn" hover-class='btn_hover'>请假</button>
+ 
+  
+
 </view>

@@ -18,19 +18,7 @@ Page({
     menu_tab: ["本周值班", "当前值班"],
     clickId: 0,
     task_info_1: null,
-    task_info_2: [{
-        name: "王志",
-        status: "已签",
-      },
-      {
-        name: "辛鹏起",
-        status: "已签",
-      },
-      {
-        name: "汤泓敏",
-        status: "未签",
-      },
-    ],
+    task_info_2: null
   },
   onLoad: function() {
     var that = this
@@ -75,30 +63,38 @@ Page({
       this.setData({
         task_info_1: app.globalData.task_info_1
       })
-  },
 
-  getUserInfo: function(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
+    /**
+     * 获取当前的值班同学
+     */
+    wx.request({
+      url: 'https://wz.oranme.com/getNowPeople',
+      method: 'GET',
+      header: {
+        'content-type': 'application/json'
+      }, // 设置请求的 header
+      success: function(res) {
+        if (res.statusCode == 200) {
+          console.log(res)
+          if (res.data != "none") {
+            that.setData({
+              task_info_2: res.data
+            })
+          }
+        } else {
+          console.log("home.js wx.request CheckCallUser statusCode" + res.statusCode);
+        }
+      },
     })
   },
 
-  day_work: function() {
-
-  },
-  now_work: function() {
-
-  },
   /**
    * 设置菜单栏点击变色
    */
   menu_bar: function(res) {
     console.log(res)
     this.setData({
-      clickId: res.target.id
+      clickId: res.currentTarget.id
     })
   },
 

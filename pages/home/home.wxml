@@ -7,14 +7,12 @@
 <view class='gray_line'></view>
 
 <block wx:for="{{day_schedule}}" wx:key="day_schedule" wx:for-item="item" wx:for-index="index">
-  <view class="card">
-    <view bindtap="onCardClick">
+  <view class="card"bindtap="onCardClick"  id="{{index}}">
       <image class="image" mode="aspectFill" src="/img/card1.jpg" />
       <text class="index_task">{{item.position}}</text>
       <text wx:if="{{item.section==1}}"class="task_info">8:20——9:50</text>
       <text wx:if="{{item.section==2}}"class="task_info">10:10——11:40</text>
       <text wx:if="{{item.section==3}}"class="task_info">14:10——16:00</text>
       <text wx:if="{{item.section==4}}"class="task_info">16:10——17:40</text>
-    </view>
   </view>
 </block>

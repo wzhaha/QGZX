@@ -16,11 +16,7 @@ Page({
    */
   data: {
     day_schedule: null,
-    now_list: [{
-      time: "14:10-16:00",
-      pos: "YF704",
-      status: 1
-    }]
+    clickCardId:0
   },
 
   /**
@@ -105,20 +101,6 @@ Page({
   },
 
   /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function() {
-
-  },
-
-  /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function() {
@@ -129,10 +111,13 @@ Page({
    * 点击卡片
    */
   onCardClick: function(event) {
-    wx.navigateTo({
-      url: '../sign/sign'
+    console.log(event)
+    this.setData({
+      clickCardId: event.currentTarget.id
     })
-    console.log(this.data.day_schedule)
-    console.log(this.data.now_list)
+    wx.navigateTo({
+      url: '../sign/sign?index=' + this.data.clickCardId
+    })
+    console.log(this.data.day_schedule[0])
   }
 })

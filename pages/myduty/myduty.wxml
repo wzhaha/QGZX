@@ -22,8 +22,9 @@
       <text class="flex_first flex-row">{{item.time}}</text>
       <text class="flex_second flex-row">{{item.section}}</text>
       <text class="flex_third flex-row">{{item.position}}</text>
-      <text wx:if="{{item.status==1}}"class="flex_fourth flex-row">完成</text>
-      <text wx:if="{{item.status==2}}"class="flex_fourth flex-row">请假</text>
+      <text wx:if="{{item.status==1}}"class="flex_fourth flex-row">签入</text>
+      <text wx:elif="{{item.status==2}}"class="flex_fourth flex-row">完成</text>
+      <text wx:elif="{{item.status==3}}"class="flex_fourth flex-row">请假</text>
     </view>
   </block>
 </view>
