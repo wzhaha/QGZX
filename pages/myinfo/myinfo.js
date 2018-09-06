@@ -16,7 +16,8 @@ Page({
   onLoad: function(options) {
     var that = this
     this.setData({
-      myinfo: app.globalData.userInfo
+      myinfo: app.globalData.userInfo,
+      studentid: app.globalData.studentId,
     })
 
     /**

@@ -26,10 +26,6 @@ Page({
       })
     } else {
       //展示本地存储能力
-
-      try {
-        wx.setStorageSync('id', '16301133')
-      } catch (e) {}
       wx.showModal({
         title: '提示',
         content: '确认提交个人信息',
@@ -37,6 +33,10 @@ Page({
           if (res.confirm) {
             app.globalData.hasStudentId = true
             app.globalData.studentId = e.detail.value.studentid
+            try {
+              wx.setStorageSync('id', e.detail.value.studentid)
+            } catch (e) { }
+
             wx.navigateTo({
               url: '../userinfo/userinfo'
             })

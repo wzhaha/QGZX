@@ -36,7 +36,7 @@
 
   <view class='list_item'>
     <label class='label_item'>学号：</label>
-    <text class="info_item">16301133</text>
+    <text class="info_item">{{studentid}}</text>
   </view>
 
   <view class='line_seperate'></view>
