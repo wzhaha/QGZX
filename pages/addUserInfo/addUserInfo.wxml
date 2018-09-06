@@ -3,16 +3,28 @@
 <view class='container_index'>
   <text class='top_show'>个人信息完善</text>
 </view>
-<form bindsubmit="bindFormSubmit">
-  <view class='flex-column'>
-    <label>学号：</label>
-    <input name="studentid" placeholder="请输入学号"></input>
+
+
+<view class='flex-column'>
+  <label>学号：</label>
+  <input name="studentid" bindinput='idInput' placeholder="请输入学号"></input>
+</view>
+<view class='white_line'></view>
+<view class='flex-column'>
+  <label>电话：</label>
+  <input name="mobile" bindinput='mobileInput' placeholder="请输入手机号"></input>
+</view>
+<view class='white_line'></view>
+<button class='btn' bindtap="showDialogBtn">提交</button>
+
+
+
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modal-dialog" wx:if="{{showModal}}">
+  <view class="modal-title">确认提交</view>
+  <view class='modal_line'></view>
+  <view class="modal-footer">
+    <view class="btn-cancel" bindtap="onCancel" >取消</view>
+    <view class="btn-confirm" bindtap="onConfirm">确定</view>
   </view>
-  <view class='white_line'></view>
-  <view class='flex-column'>
-    <label>电话：</label>
-    <input name="mobile" placeholder="请输入手机号"></input>
-  </view>
-  <view class='white_line'></view>
-  <button class='btn' form-type="submit" >提交</button>
-</form>
+</view>

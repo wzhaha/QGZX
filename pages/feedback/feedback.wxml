@@ -6,10 +6,10 @@
 <view class='gray_line'></view>
 <view class='white_line'></view>
 
-<view class="section">
-  <form bindsubmit="bindFormSubmit">
-    <textarea placeholder="欢迎反馈使用中遇到的问题" value="{{suggestion}}" name="textarea" auto-focus/>
-    <button bindtap="bindFormSubmit" calss="btn" form-type="submit"> 提交 </button>
-  </form>
-</view>
 
+<form bindsubmit="bindFormSubmit">
+  <textarea placeholder="欢迎反馈使用中遇到的问题" value="{{suggestion}}" name="textarea" auto-focus/>
+  <view class='btn'>
+    <button form-type="submit"> 提交 </button>
+  </view>
+</form>

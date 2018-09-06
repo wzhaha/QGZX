@@ -16,16 +16,16 @@
   </view>
  
   <button wx:if="{{task_detail.status==null}}" bindtap="checkin" class="flex_fourth btn" hover-class='btn_hover'>签入</button>
-  <button wx:else disabled='true'bindtap="checkin" class="flex_fourth btn" hover-class='btn_hover'>签入</button>
+  <button wx:else disabled='true'bindtap="checkin" class="btn" hover-class='btn_hover'>签入</button>
 
   <view class='white_line'></view>
 
   <button wx:if="{{task_detail.status==1}}"  bindtap="checkout" class="flex_fourth btn" hover-class='btn_hover'>签出</button>
-  <button wx:else disabled='true' bindtap="checkout" class="flex_fourth btn" hover-class='btn_hover'>签出</button>
+  <button wx:else disabled='true' bindtap="checkout" class="btn" hover-class='btn_hover'>签出</button>
 
   <view class='white_line'></view>
   <button wx:if="{{task_detail.status==null}}" bindtap="leave" class="flex_fourth btn" hover-class='btn_hover'>请假</button>
-  <button wx:else disabled='true' bindtap="leave" class="flex_fourth btn" hover-class='btn_hover'>请假</button>
+  <button wx:else disabled='true' bindtap="leave" class="btn" hover-class='btn_hover'>请假</button>
  
   
 

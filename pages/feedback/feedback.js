@@ -1,4 +1,5 @@
 // pages/feedback/feedback.js
+const app=getApp()
 Page({
 
   /**
@@ -79,6 +80,9 @@ Page({
         icon: 'succes',
         duration: 1000,
         mask: true
+      })
+      wx.switchTab({
+        url: '../userinfo/userinfo'
       })
     }
     else{
