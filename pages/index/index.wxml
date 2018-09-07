@@ -56,7 +56,9 @@
       <view class="flex-row">
         <text class="flex_first_2 flex-row">{{index+1}}</text>
         <text class="flex_second_2 flex-row">{{item.name}}</text>
-        <text class="flex_third_2 flex-row">{{item.status}}</text>
+        <text wx:if="{{item.status==0}}"class="flex_third_2 flex-row">未签到</text>
+        <text wx:elif="{{item.status==3}}"class="flex_third_2 flex-row">请假</text>
+        <text wx:else class="flex_third_2 flex-row">已签到</text>
       </view>
     </block>
   </view>

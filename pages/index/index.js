@@ -64,38 +64,42 @@ Page({
         task_info_1: app.globalData.task_info_1
       })
 
-    /**
-     * 获取当前的值班同学
-     */
-    wx.request({
-      url: 'https://wz.oranme.com/getNowPeople',
-      method: 'GET',
-      header: {
-        'content-type': 'application/json'
-      }, // 设置请求的 header
-      success: function(res) {
-        if (res.statusCode == 200) {
-          console.log(res)
-          if (res.data != "none") {
-            that.setData({
-              task_info_2: res.data
-            })
-          }
-        } else {
-          console.log("home.js wx.request CheckCallUser statusCode" + res.statusCode);
-        }
-      },
-    })
   },
 
   /**
    * 设置菜单栏点击变色
    */
   menu_bar: function(res) {
+    var that=this
     console.log(res)
     this.setData({
       clickId: res.currentTarget.id
     })
+
+    if (this.data.clickId == 1) {
+      /**
+       * 获取当前的值班同学
+       */
+      wx.request({
+        url: 'https://wz.oranme.com/getNowPeople',
+        method: 'GET',
+        header: {
+          'content-type': 'application/json'
+        }, // 设置请求的 header
+        success: function(res) {
+          if (res.statusCode == 200) {
+            console.log(res)
+            if (res.data != "none") {
+              that.setData({
+                task_info_2: res.data
+              })
+            }
+          } else {
+            console.log("home.js wx.request CheckCallUser statusCode" + res.statusCode);
+          }
+        },
+      })
+    }
   },
 
   /**

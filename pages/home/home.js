@@ -41,7 +41,7 @@ Page({
       })
     }
     /**
-     * 从服务器获取个人信息
+     * 从服务器获取
      */
     if (!app.globalData.has_day_schedule || app.globalData.hasStudentId) {
       wx.request({
